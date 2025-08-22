@@ -10,19 +10,41 @@
   <div class="container">
     <h1>Fun Photo Poll!</h1>
     <p class="subtitle">Which photo do you like more?</p>
+    <hr style="border: none; height: 2px; background: rgba(255,255,255,0.3); margin: 15px auto; width: 60%; border-radius: 10px;">
+
+    <!-- Options -->
     <div class="options">
-      <div class="option-A" >
+      <div class="option-A">
         <img id="photoA" src="option a.jpg" alt="Photo A">
         <p class="labelA">Photo A</p>
+        <!-- Progress bar for A -->
+        <div class="progress">
+          <div class="progress-bar" id="barA" style="width: 0%;">0%</div>
+        </div>
       </div>
+
       <div class="option-B">
         <img id="photoB" src="option aa.webp" alt="Photo B">
         <p class="labelB">Photo B</p>
+        <!-- Progress bar for B -->
+        <div class="progress">
+          <div class="progress-bar" id="barB" style="width: 0%;">0%</div>
+        </div>
       </div>
     </div>
+
+    <!-- Result Text -->
     <p id="result"></p>
+
+    <!-- Next Button -->
     <button id="nextBtn" onclick="nextPhotos()">Next</button>
+
+    <!-- Footer -->
+    <p style="margin-top: 20px; font-size: 0.9rem; color: #ccc;">
+      🔥 Vote, Compare & Have Fun!
+    </p>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
