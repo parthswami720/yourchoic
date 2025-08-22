@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Photo Poll</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Fun Photo Poll!</h1>
+    <p class="subtitle">Which photo do you like more?</p>
+    <div class="options">
+      <div class="option-A" >
+        <img id="photoA" src="option a.jpg" alt="Photo A">
+        <p class="labelA">Photo A</p>
+      </div>
+      <div class="option-B">
+        <img id="photoB" src="option aa.webp" alt="Photo B">
+        <p class="labelB">Photo B</p>
+      </div>
+    </div>
+    <p id="result"></p>
+    <button id="nextBtn" onclick="nextPhotos()">Next</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
