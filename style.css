@@ -1,263 +1,223 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-/* Global Reset */
+/* 🌌 Base Styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
   color: #fff;
-  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-/* Container (Glassmorphism Card) */
+/* 📦 Main Container */
 .container {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
-  padding: 40px 30px;
-  border-radius: 25px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  max-width: 1000px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   text-align: center;
-  width: 95%;
-  max-width: 600px;
-  animation: fadeIn 1s ease-in-out;
+  backdrop-filter: blur(10px);
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Title */
+/* 🔠 Headings */
 h1 {
   font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #ffeb3b;
-  text-shadow: 0px 2px 10px rgba(255,255,255,0.3);
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: #d1d1d1;
-  margin-bottom: 25px;
-  letter-spacing: 1px;
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
 }
 
-/* Options Container */
+/* 🖼 Options Container */
 .options {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  margin-bottom: 25px;
   flex-wrap: wrap;
 }
 
-.options div {
+/* 🖼 Individual Option */
+.option-A,
+.option-B {
   flex: 1;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.options div:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-}
-
-/* Images */
-.options img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 20px;
-  border: 4px solid rgba(255,255,255,0.7);
+  min-width: 280px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+  padding: 15px;
   transition: 0.3s ease-in-out;
-}
-
-.options div:hover img {
-  border-color: #ffeb3b;
-  filter: brightness(1.1);
-}
-
-/* Labels */
-.labelA, .labelB {
-  margin-top: 10px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Result Text */
-#result {
-  font-size: 1.4rem;
-  margin: 15px 0 25px;
-  font-weight: bold;
-  color: #00ffcc;
-  text-shadow: 0 0 10px rgba(0,255,204,0.6);
-}
-
-/* Next Button */
-#nextBtn {
-  background: linear-gradient(135deg, #ff512f, #dd2476, #833ab4);
-  border: none;
-  padding: 14px 35px;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #fff;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  letter-spacing: 1px;
 }
 
-#nextBtn:hover {
-  transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+.option-A:hover,
+.option-B:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-/* ---------- Progress Bars (Premium) ---------- */
-.progress {
+.option-A img,
+.option-B img {
   width: 100%;
-  height: 14px;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 999px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.labelA,
+.labelB {
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 1.1rem;
+  color: #ffda79;
+}
+
+/* 📊 Progress Bars */
+.progress {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
   overflow: hidden;
   margin-top: 10px;
-  position: relative;
-  box-shadow: inset 0 2px 10px rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px);
+  height: 20px;
 }
 
 .progress-bar {
   height: 100%;
-  width: 0%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 10px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: .5px;
-  color: #0b1620;
-  transition: width 600ms cubic-bezier(.22,.61,.36,1), filter .3s ease;
-  background: linear-gradient(90deg, #ffeb3b, #00ffcc, #40c9ff);
-  background-size: 200% 100%;
-  animation: barShift 3.5s linear infinite;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  text-align: center;
+  line-height: 20px;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
 }
 
-/* A/B slight tint differences (auto if you want via JS add class) */
-#barA { filter: saturate(1.1) hue-rotate(-10deg); }
-#barB { filter: saturate(1.1) hue-rotate(15deg); }
-
-@keyframes barShift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
-/* Subtle shine sweep when value changes (toggle .shine via JS) */
-.progress-bar.shine {
-  position: relative;
-  overflow: hidden;
-}
-.progress-bar.shine::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -30%;
-  width: 40%;
-  height: 200%;
-  transform: rotate(20deg);
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.6) 50%,
-    rgba(255,255,255,0) 100%
-  );
-  animation: sweep 800ms ease;
-  pointer-events: none;
-}
-@keyframes sweep {
-  from { left: -40%; }
-  to   { left: 120%; }
-}
-
-/* ---------- Option Cards: state styles (optional, JS can toggle) ---------- */
-.options .option-A.selected img,
-.options .option-B.selected img {
-  outline: 3px solid #00ffcc;
-  box-shadow: 0 12px 28px rgba(0, 255, 204, 0.25);
-  transform: translateY(-4px) scale(1.02);
-}
-
-.options .option-A.winner img,
-.options .option-B.winner img {
-  outline: 3px solid #6fff7b;
-  box-shadow: 0 14px 34px rgba(111, 255, 123, 0.28);
-}
-.options .option-A.loser img,
-.options .option-B.loser img {
-  filter: grayscale(0.3) brightness(0.9);
-  outline-color: rgba(255,255,255,0.35);
-}
-
-/* Labels glow on hover/selected */
-.options .option-A:hover .labelA,
-.options .option-B:hover .labelB,
-.options .option-A.selected .labelA,
-.options .option-B.selected .labelB {
-  text-shadow: 0 0 10px rgba(255, 235, 59, 0.6);
-}
-
-/* ---------- Result Effects ---------- */
+/* 📍 Result Text */
 #result {
-  position: relative;
-}
-#result.pulse {
-  animation: popPulse 650ms cubic-bezier(.22,.61,.36,1);
-}
-@keyframes popPulse {
-  0%   { transform: scale(0.9); opacity: 0.3; }
-  60%  { transform: scale(1.06); opacity: 1; }
-  100% { transform: scale(1); }
-}
-#result.win  { color: #6fff7b; text-shadow: 0 0 12px rgba(111,255,123,0.5); }
-#result.lose { color: #ff8a80; text-shadow: 0 0 12px rgba(255,138,128,0.4); }
-
-/* ---------- Micro-interactions ---------- */
-.options div:active {
-  transform: translateY(-4px) scale(1.02);
-}
-#nextBtn:active {
-  transform: translateY(1px) scale(1.02);
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-/* ---------- Mobile polish ---------- */
+/* 🔘 Next Button */
+#nextBtn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  color: white;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#nextBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff4b2b;
+}
+
+/* -------------------- */
+/* 📱 RESPONSIVE DESIGN */
+/* -------------------- */
+
+/* Tablet */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .options {
+    gap: 15px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
-  .progress { height: 12px; }
-  .progress-bar { font-size: 0.72rem; padding-right: 8px; }
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .options {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .option-A,
+  .option-B {
+    min-width: 100%;
+  }
+
+  #nextBtn {
+    width: 100%;
+  }
 }
 
+/* Extra Small Phones (≤350px) */
+@media (max-width: 350px) {
+  body {
+    padding: 5px;
+  }
 
-/* Responsive */
-@media (max-width: 600px) {
-  h1 { font-size: 2rem; }
-  .options { flex-direction: column; }
-  .options img { height: 200px; }
-  #nextBtn { width: 100%; }
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .option-A,
+  .option-B {
+    padding: 8px;
+  }
+
+  .labelA,
+  .labelB {
+    font-size: 0.9rem;
+  }
+
+  .progress {
+    height: 14px;
+  }
+
+  .progress-bar {
+    font-size: 0.7rem;
+  }
+
+  #nextBtn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
 }
